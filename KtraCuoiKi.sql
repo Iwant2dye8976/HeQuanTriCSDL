@@ -91,44 +91,44 @@ CREATE TABLE StockReceiptDetails (
 
 INSERT INTO Books (Title, Author, Category, Publisher, Price, StockQuantity)
 VALUES
-('Kẻ Bắt Lúa Mạch', 'J.D. Salinger', 'Tiểu thuyết', 'Nhà xuất bản Trẻ', 250000, 50),
-('Giết Con Chim Nhại', 'Harper Lee', 'Tiểu thuyết', 'Nhà xuất bản Văn học', 300000, 30),
-('1984', 'George Orwell', 'Dystopian', 'Nhà xuất bản Thế giới', 220000, 40),
-('Kiêu Hãnh và Định Kiến', 'Jane Austen', 'Lãng mạn', 'Nhà xuất bản Hội Nhà văn', 180000, 60),
-('Đại Gia Gatsby', 'F. Scott Fitzgerald', 'Tiểu thuyết', 'Nhà xuất bản Nhã Nam', 250000, 25),
-('Moby-Dick', 'Herman Melville', 'Phiêu lưu', 'Nhà xuất bản Thế Giới', 350000, 15),
-('Chiến Tranh và Hòa Bình', 'Leo Tolstoy', 'Lịch sử', 'Nhà xuất bản Văn hóa', 500000, 10),
-('Tội Ác và Hình Phạt', 'Fyodor Dostoevsky', 'Tiểu thuyết triết học', 'Nhà xuất bản Trẻ', 300000, 50),
-('Chúa Tể Những Chiếc Nhẫn', 'J.R.R. Tolkien', 'Fantasy', 'Nhà xuất bản Kim Đồng', 250000, 35),
-('Hobbit', 'J.R.R. Tolkien', 'Fantasy', 'Nhà xuất bản Kim Đồng', 220000, 20);
+(N'Kẻ Bắt Lúa Mạch', 'J.D. Salinger', N'Tiểu thuyết', N'Nhà xuất bản Trẻ', 250000, 50),
+(N'Giết Con Chim Nhại', 'Harper Lee', N'Tiểu thuyết', N'Nhà xuất bản Văn học', 300000, 30),
+(N'1984', 'George Orwell', 'Dystopian', N'Nhà xuất bản Thế giới', 220000, 40),
+(N'Kiêu Hãnh và Định Kiến', 'Jane Austen', N'Lãng mạn', N'Nhà xuất bản Hội Nhà văn', 180000, 60),
+(N'Đại Gia Gatsby', 'F. Scott Fitzgerald', N'Tiểu thuyết', N'Nhà xuất bản Nhã Nam', 250000, 25),
+(N'Moby-Dick', 'Herman Melville', N'Phiêu lưu', N'Nhà xuất bản Thế Giới', 350000, 15),
+(N'Chiến Tranh và Hòa Bình', 'Leo Tolstoy', N'Lịch sử', N'Nhà xuất bản Văn hóa', 500000, 10),
+(N'Tội Ác và Hình Phạt', 'Fyodor Dostoevsky', N'Tiểu thuyết triết học', N'Nhà xuất bản Trẻ', 300000, 50),
+(N'Chúa Tể Những Chiếc Nhẫn', 'J.R.R. Tolkien', 'Fantasy', N'Nhà xuất bản Kim Đồng', 250000, 35),
+(N'Hobbit', 'J.R.R. Tolkien', 'Fantasy', N'Nhà xuất bản Kim Đồng', 220000, 20);
 
 
 INSERT INTO Customers (FullName, PhoneNumber, Email, Address)
 VALUES
-('Nguyễn Thị Lan', '0912345678', 'lan.nguyen@example.com', '123 Đường 1, Hà Nội'),
-('Trần Văn Nam', '0987654321', 'nam.tran@example.com', '456 Đường 2, Hồ Chí Minh'),
-('Lê Hoàng Duy', '0901122334', 'duy.le@example.com', '789 Đường 3, Đà Nẵng'),
-('Hoàng Minh Tuấn', '0911223344', 'tuan.hoang@example.com', '101 Đường 4, Hà Nội'),
-('Phạm Minh Khuê', '0988776655', 'khue.pham@example.com', '202 Đường 5, Hồ Chí Minh'),
-('Mai Thi Lan', '0909887766', 'lan.mai@example.com', '303 Đường 6, Hải Phòng'),
-('Vũ Minh Quân', '0912233445', 'quan.vu@example.com', '404 Đường 7, Cần Thơ'),
-('Đoàn Thị Lan Anh', '0988773344', 'anh.doan@example.com', '505 Đường 8, Huế'),
-('Nguyễn Thị Ngọc', '0901124556', 'ngoc.nguyen@example.com', '606 Đường 9, Hà Nội'),
-('Lương Minh Duy', '0988772233', 'duy.luong@example.com', '707 Đường 10, Hồ Chí Minh');
+(N'Nguyễn Thị Lan', '0912345678', 'lan.nguyen@example.com', N'123 Đường 1, Hà Nội'),
+(N'Trần Văn Nam', '0987654321', 'nam.tran@example.com', N'456 Đường 2, Hồ Chí Minh'),
+(N'Lê Hoàng Duy', '0901122334', 'duy.le@example.com', N'789 Đường 3, Đà Nẵng'),
+(N'Hoàng Minh Tuấn', '0911223344', 'tuan.hoang@example.com', N'101 Đường 4, Hà Nội'),
+(N'Phạm Minh Khuê', '0988776655', 'khue.pham@example.com', N'202 Đường 5, Hồ Chí Minh'),
+(N'Mai Thi Lan', '0909887766', 'lan.mai@example.com', N'303 Đường 6, Hải Phòng'),
+(N'Vũ Minh Quân', '0912233445', 'quan.vu@example.com', N'404 Đường 7, Cần Thơ'),
+(N'Đoàn Thị Lan Anh', '0988773344', 'anh.doan@example.com', N'505 Đường 8, Huế'),
+(N'Nguyễn Thị Ngọc', '0901124556', 'ngoc.nguyen@example.com', N'606 Đường 9, Hà Nội'),
+(N'Lương Minh Duy', '0988772233', 'duy.luong@example.com', N'707 Đường 10, Hồ Chí Minh');
 
 
 INSERT INTO Employees (FullName, Position, PhoneNumber, Email)
 VALUES
-('Lê Văn An', 'Quản lý', '0901234567', 'an.le@company.com'),
-('Trần Thị Lan', 'Nhân viên bán hàng', '0902345678', 'lan.tran@company.com'),
-('Nguyễn Minh Tuấn', 'Nhân viên bán hàng', '0903456789', 'tuan.nguyen@company.com'),
-('Phan Thị Dung', 'Thu ngân', '0904567890', 'dung.phan@company.com'),
-('Đặng Minh Khoa', 'Nhân viên kho', '0905678901', 'khoa.dang@company.com'),
-('Hồ Quốc Duy', 'Quản lý', '0906789012', 'duy.ho@company.com'),
-('Trần Kim Lan', 'Nhân viên bán hàng', '0907890123', 'lan.tran@company.com'),
-('Bùi Minh Tuấn', 'Thu ngân', '0908901234', 'tuan.bui@company.com'),
-('Nguyễn Thị Như', 'Nhân viên kho', '0909012345', 'nhu.nguyen@company.com'),
-('Phan Minh Hoàng', 'Quản lý', '0901123456', 'hoang.phan@company.com');
+(N'Lê Văn An', N'Quản lý', '0901234567', 'an.le@company.com'),
+(N'Trần Thị Lan', N'Nhân viên bán hàng', '0902345678', 'lan.tran@company.com'),
+(N'Nguyễn Minh Tuấn', N'Nhân viên bán hàng', '0903456789', 'tuan.nguyen@company.com'),
+(N'Phan Thị Dung', N'Thu ngân', '0904567890', 'dung.phan@company.com'),
+(N'Đặng Minh Khoa', N'Nhân viên kho', '0905678901', 'khoa.dang@company.com'),
+(N'Hồ Quốc Duy', N'Quản lý', '0906789012', 'duy.ho@company.com'),
+(N'Trần Kim Lan', N'Nhân viên bán hàng', '0907890123', 'lan.tran@company.com'),
+(N'Bùi Minh Tuấn', N'Thu ngân', '0908901234', 'tuan.bui@company.com'),
+(N'Nguyễn Thị Như', N'Nhân viên kho', '0909012345', 'nhu.nguyen@company.com'),
+(N'Phan Minh Hoàng', N'Quản lý', '0901123456', 'hoang.phan@company.com');
 
 
 INSERT INTO Orders (CustomerID, EmployeeID, OrderDate, TotalAmount)
@@ -159,16 +159,16 @@ VALUES
 
 INSERT INTO Suppliers (Name, PhoneNumber, Email, Address)
 VALUES
-('Nhà cung cấp Sách A', '0901234000', 'ncc1@example.com', '10 Đường Sách, Hà Nội'),
-('Nhà cung cấp Sách B', '0902345000', 'ncc2@example.com', '20 Đường Sách, Hồ Chí Minh'),
-('Nhà cung cấp Sách C', '0903456000', 'ncc3@example.com', '30 Đường Sách, Đà Nẵng'),
-('Nhà cung cấp Sách D', '0904567000', 'ncc4@example.com', '40 Đường Sách, Hải Phòng'),
-('Nhà cung cấp Sách E', '0905678000', 'ncc5@example.com', '50 Đường Sách, Cần Thơ'),
-('Nhà cung cấp Sách F', '0906789000', 'ncc6@example.com', '60 Đường Sách, Huế'),
-('Nhà cung cấp Sách G', '0907891000', 'ncc7@example.com', '70 Đường Sách, Hà Nội'),
-('Nhà cung cấp Sách H', '0908902000', 'ncc8@example.com', '80 Đường Sách, Hồ Chí Minh'),
-('Nhà cung cấp Sách I', '0909013000', 'ncc9@example.com', '90 Đường Sách, Đà Nẵng'),
-('Nhà cung cấp Sách J', '0901124000', 'ncc10@example.com', '100 Đường Sách, Hải Phòng');
+(N'Nhà cung cấp Sách A', '0901234000', 'ncc1@example.com', N'10 Đường Sách, Hà Nội'),
+(N'Nhà cung cấp Sách B', '0902345000', 'ncc2@example.com', N'20 Đường Sách, Hồ Chí Minh'),
+(N'Nhà cung cấp Sách C', '0903456000', 'ncc3@example.com', N'30 Đường Sách, Đà Nẵng'),
+(N'Nhà cung cấp Sách D', '0904567000', 'ncc4@example.com', N'40 Đường Sách, Hải Phòng'),
+(N'Nhà cung cấp Sách E', '0905678000', 'ncc5@example.com', N'50 Đường Sách, Cần Thơ'),
+(N'Nhà cung cấp Sách F', '0906789000', 'ncc6@example.com', N'60 Đường Sách, Huế'),
+(N'Nhà cung cấp Sách G', '0907891000', 'ncc7@example.com', N'70 Đường Sách, Hà Nội'),
+(N'Nhà cung cấp Sách H', '0908902000', 'ncc8@example.com', N'80 Đường Sách, Hồ Chí Minh'),
+(N'Nhà cung cấp Sách I', '0909013000', 'ncc9@example.com', N'90 Đường Sách, Đà Nẵng'),
+(N'Nhà cung cấp Sách J', '0901124000', 'ncc10@example.com', N'100 Đường Sách, Hải Phòng');
 
 
 INSERT INTO StockReceipts (SupplierID, EmployeeID, ReceiptDate, TotalAmount)
@@ -199,3 +199,4 @@ VALUES
 (10, 10, 250, 250000);
 
 
+select distinct publisher from books
