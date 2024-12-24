@@ -14,77 +14,77 @@ import java.util.List;
 
 public class Book {
 
-    private int bookID;
-    private String title;
-    private String author;
-    private String category;
-    private String publisher;
-    private double price;
-    private int stockQuantity;
+    private int MaSach;
+    private String TieuDe;
+    private String TacGia;
+    private String TheLoai;
+    private String NhaXuatBan;
+    private double Gia;
+    private int SoLuongTon;
 
-    public Book(int bookID, String title, String author, String category, String publisher, double price, int stockQuantity) {
-        this.bookID = bookID;
-        this.title = title;
-        this.author = author;
-        this.category = category;
-        this.publisher = publisher;
-        this.price = price;
-        this.stockQuantity = stockQuantity;
+    public Book(int MaSach, String TieuDe, String TacGia, String TheLoai, String NhaXuatBan, double Gia, int SoLuongTon) {
+        this.MaSach = MaSach;
+        this.TieuDe = TieuDe;
+        this.TacGia = TacGia;
+        this.TheLoai = TheLoai;
+        this.NhaXuatBan = NhaXuatBan;
+        this.Gia = Gia;
+        this.SoLuongTon = SoLuongTon;
     }
 
-    public int getBookID() {
-        return bookID;
+    public int getMaSach() {
+        return MaSach;
     }
 
-    public void setBookID(int bookID) {
-        this.bookID = bookID;
+    public void setMaSach(int MaSach) {
+        this.MaSach = MaSach;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTieuDe() {
+        return TieuDe;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTieuDe(String TieuDe) {
+        this.TieuDe = TieuDe;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getTacGia() {
+        return TacGia;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setTacGia(String TacGia) {
+        this.TacGia = TacGia;
     }
 
-    public String getCategory() {
-        return category;
+    public String getTheLoai() {
+        return TheLoai;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setTheLoai(String TheLoai) {
+        this.TheLoai = TheLoai;
     }
 
     public String getPublisher() {
         return publisher;
     }
 
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
+    public void setNhaXuatBan(String NhaXuatBan) {
+        this.NhaXuatBan = NhaXuatBan;
     }
 
-    public double getPrice() {
-        return price;
+    public double getGia() {
+        return Gia;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setGia(double Gia) {
+        this.Gia = Gia;
     }
 
-    public int getStockQuantity() {
-        return stockQuantity;
+    public int getSoLuongTon() {
+        return SoLuongTon;
     }
 
-    public void setStockQuantity(int stockQuantity) {
-        this.stockQuantity = stockQuantity;
+    public void setSoLuongTon(int SoLuongTon) {
+        this.SoLuongTon = SoLuongTon;
     }
 }
