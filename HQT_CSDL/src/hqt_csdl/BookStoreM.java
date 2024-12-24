@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
 public class BookStoreM extends javax.swing.JFrame {
 
     private ConSQL conn = new ConSQL();
-    private String[] columns = {"BookID", "Title", "Author", "Category", "Publisher", "Price", "StockQuantity"};
+    private String[] columns = {"MaSach", "TieuDe", "TacGia", "TheLoai", "NhaXuatBan", "Gia", "SoLuongTon"};
 
     public BookStoreM() {
         initComponents();
@@ -28,13 +28,13 @@ public class BookStoreM extends javax.swing.JFrame {
             while (rs.next()) {
                 Book b = new Book(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getDouble(6), rs.getInt(7));
                 Object[] row = {
-                    b.getBookID(),
-                    b.getTitle(),
-                    b.getAuthor(),
-                    b.getCategory(),
-                    b.getPublisher(),
-                    b.getPrice(),
-                    b.getStockQuantity()
+                    b.getMaSach(),
+                    b.getTieuDe(),
+                    b.getTacGia(),
+                    b.getTheLoai(),
+                    b.getNhaXuatBan(),
+                    b.getGia(),
+                    b.getSoLuongTon()
                 };
                 model.addRow(row);
             }
