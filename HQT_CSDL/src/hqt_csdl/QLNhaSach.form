@@ -176,7 +176,7 @@
                                       <Component id="BookID_tf" linkSize="9" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="31" max="32767" attributes="0"/>
+                              <EmptySpace pref="33" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" attributes="0">
@@ -452,7 +452,7 @@
                                           <Component id="jLabel11" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel13" alignment="0" pref="61" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="7" max="32767" attributes="0"/>
+                                      <EmptySpace pref="9" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Email_tf" linkSize="14" min="-2" max="-2" attributes="0"/>
@@ -859,32 +859,24 @@
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="DienThoaiNV_tf1" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <Component id="HoTenNV_tf1" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <Component id="MaNV_tf1" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="MaNVCTHD_tf" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="NgayLap_tf" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="MaHD_tf" linkSize="22" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel23" linkSize="20" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel22" linkSize="20" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="jLabel22" linkSize="20" min="-2" pref="61" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="EmailNV_tf1" max="32767" attributes="0"/>
-                                          <Component id="ChucVu_cbx1" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="38" pref="38" max="-2" attributes="0"/>
+                                      <Component id="TongTien_tf" linkSize="22" min="-2" pref="180" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                                       <Component id="AddHD_btn" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="UpdateNV_btn1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="SuaHD_btn" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="DeleteNV_tf1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="48" max="32767" attributes="0"/>
+                                      <Component id="DeleteHD_btn" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -902,26 +894,22 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel19" linkSize="21" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                           <Component id="jLabel22" linkSize="21" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="EmailNV_tf1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="MaNV_tf1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TongTien_tf" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MaHD_tf" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel20" linkSize="21" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="HoTenNV_tf1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel23" linkSize="21" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ChucVu_cbx1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="NgayLap_tf" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel21" linkSize="21" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MaNVCTHD_tf" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="3" groupAlignment="3" attributes="0">
                               <Component id="AddHD_btn" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="UpdateNV_btn1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="DeleteNV_tf1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="jLabel21" linkSize="21" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="DienThoaiNV_tf1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="SuaHD_btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="DeleteHD_btn" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
@@ -934,27 +922,31 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel19">
               <Properties>
-                <Property name="text" type="java.lang.String" value="M&#xe3; nh&#xe2;n vi&#xea;n"/>
+                <Property name="text" type="java.lang.String" value="M&#xe3; h&#xf3;a &#x111;&#x1a1;n"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
-                <Property name="text" type="java.lang.String" value="H&#x1ecd; t&#xea;n"/>
+                <Property name="text" type="java.lang.String" value="Ng&#xe0;y l&#x1ead;p"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel21">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x110;i&#x1ec7;n tho&#x1ea1;i"/>
+                <Property name="text" type="java.lang.String" value="M&#xe3; nh&#xe2;n vi&#xea;n"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="MaNV_tf1">
+            <Component class="javax.swing.JTextField" name="MaHD_tf">
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="HoTenNV_tf1">
+            <Component class="javax.swing.JTextField" name="NgayLap_tf">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="DienThoaiNV_tf1">
+            <Component class="javax.swing.JTextField" name="MaNVCTHD_tf">
             </Component>
             <Component class="javax.swing.JButton" name="AddHD_btn">
               <Properties>
@@ -965,21 +957,21 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddHD_btnActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="UpdateNV_btn1">
+            <Component class="javax.swing.JButton" name="SuaHD_btn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;t"/>
+                <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateNV_btn1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SuaHD_btnActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="DeleteNV_tf1">
+            <Component class="javax.swing.JButton" name="DeleteHD_btn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="X&#xf3;a"/>
                 <Property name="actionCommand" type="java.lang.String" value="Delete_btn"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteNV_tf1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteHD_btnActionPerformed"/>
               </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane5">
@@ -989,7 +981,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="data_table_nv1">
+                <Component class="javax.swing.JTable" name="data_table_hd">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="0" rowCount="4"/>
@@ -1015,30 +1007,10 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel22">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Email"/>
+                <Property name="text" type="java.lang.String" value="T&#x1ed5;ng ti&#x1ec1;n"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="EmailNV_tf1">
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel23">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Ch&#x1ee9;c v&#x1ee5;"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="ChucVu_cbx1">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Nh&#xe2;n vi&#xea;n b&#xe1;n h&#xe0;ng"/>
-                    <StringItem index="1" value="Nh&#xe2;n vi&#xea;n kho"/>
-                    <StringItem index="2" value="Qu&#x1ea3;n l&#xfd;"/>
-                    <StringItem index="3" value="Thu ng&#xe2;n"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
+            <Component class="javax.swing.JTextField" name="TongTien_tf">
             </Component>
           </SubComponents>
         </Container>

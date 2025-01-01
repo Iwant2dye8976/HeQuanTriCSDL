@@ -17,7 +17,6 @@ public class QLNhaSach extends javax.swing.JFrame {
     private String[] columns_sach = {"MaSach", "TieuDe", "TacGia", "TheLoai", "NhaXuatBan", "Gia", "SoLuongTon"};
     private String[] columns_kh = {"MaKhachHang", "HoTen", "SoDienThoai", "Email", "DiaChi"};
     private String[] columns_nv = {"MaNhanVien", "HoTen", "ChucVu", "SoDienThoai", "Email"};
-    private Boolean isLoaded = false;
 
     public QLNhaSach() {
         initComponents();
@@ -411,19 +410,17 @@ public class QLNhaSach extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        MaNV_tf1 = new javax.swing.JTextField();
-        HoTenNV_tf1 = new javax.swing.JTextField();
-        DienThoaiNV_tf1 = new javax.swing.JTextField();
+        MaHD_tf = new javax.swing.JTextField();
+        NgayLap_tf = new javax.swing.JTextField();
+        MaNVCTHD_tf = new javax.swing.JTextField();
         AddHD_btn = new javax.swing.JButton();
-        UpdateNV_btn1 = new javax.swing.JButton();
-        DeleteNV_tf1 = new javax.swing.JButton();
+        SuaHD_btn = new javax.swing.JButton();
+        DeleteHD_btn = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
-        data_table_nv1 = new javax.swing.JTable();
+        data_table_hd = new javax.swing.JTable();
         jLabel26 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        EmailNV_tf1 = new javax.swing.JTextField();
-        jLabel23 = new javax.swing.JLabel();
-        ChucVu_cbx1 = new javax.swing.JComboBox<>();
+        TongTien_tf = new javax.swing.JTextField();
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -588,7 +585,7 @@ public class QLNhaSach extends javax.swing.JFrame {
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(BookID_tf)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -755,7 +752,7 @@ public class QLNhaSach extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Email_tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -947,13 +944,16 @@ public class QLNhaSach extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("QL Nhân Viên", jPanel3);
 
-        jLabel19.setText("Mã nhân viên");
+        jLabel19.setText("Mã hóa đơn");
 
-        jLabel20.setText("Họ tên");
+        jLabel20.setText("Ngày lập");
 
-        jLabel21.setText("Điện thoại");
+        jLabel21.setText("Mã nhân viên");
 
-        MaNV_tf1.setEnabled(false);
+        MaHD_tf.setEnabled(false);
+
+        NgayLap_tf.setEditable(false);
+        NgayLap_tf.setEnabled(false);
 
         AddHD_btn.setText("Thêm");
         AddHD_btn.setActionCommand("Add_btn");
@@ -963,22 +963,22 @@ public class QLNhaSach extends javax.swing.JFrame {
             }
         });
 
-        UpdateNV_btn1.setText("Cập nhật");
-        UpdateNV_btn1.addActionListener(new java.awt.event.ActionListener() {
+        SuaHD_btn.setText("Sửa");
+        SuaHD_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateNV_btn1ActionPerformed(evt);
+                SuaHD_btnActionPerformed(evt);
             }
         });
 
-        DeleteNV_tf1.setText("Xóa");
-        DeleteNV_tf1.setActionCommand("Delete_btn");
-        DeleteNV_tf1.addActionListener(new java.awt.event.ActionListener() {
+        DeleteHD_btn.setText("Xóa");
+        DeleteHD_btn.setActionCommand("Delete_btn");
+        DeleteHD_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DeleteNV_tf1ActionPerformed(evt);
+                DeleteHD_btnActionPerformed(evt);
             }
         });
 
-        data_table_nv1.setModel(new javax.swing.table.DefaultTableModel(
+        data_table_hd.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -989,17 +989,13 @@ public class QLNhaSach extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane5.setViewportView(data_table_nv1);
+        jScrollPane5.setViewportView(data_table_hd);
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel26.setText("QUẢN LÝ HÓA ĐƠN");
 
-        jLabel22.setText("Email");
-
-        jLabel23.setText("Chức vụ");
-
-        ChucVu_cbx1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhân viên bán hàng", "Nhân viên kho", "Quản lý", "Thu ngân" }));
+        jLabel22.setText("Tổng tiền");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1016,33 +1012,29 @@ public class QLNhaSach extends javax.swing.JFrame {
                             .addComponent(jLabel21))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DienThoaiNV_tf1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(HoTenNV_tf1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MaNV_tf1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(MaNVCTHD_tf, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NgayLap_tf, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MaHD_tf, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(33, 33, 33)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel23)
-                                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(EmailNV_tf1)
-                                    .addComponent(ChucVu_cbx1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(38, 38, 38))
+                                .addComponent(TongTien_tf, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
+                                .addGap(86, 86, 86)
                                 .addComponent(AddHD_btn)
                                 .addGap(18, 18, 18)
-                                .addComponent(UpdateNV_btn1)
+                                .addComponent(SuaHD_btn)
                                 .addGap(18, 18, 18)
-                                .addComponent(DeleteNV_tf1)
-                                .addGap(0, 48, Short.MAX_VALUE)))))
+                                .addComponent(DeleteHD_btn)))))
                 .addGap(83, 83, 83))
             .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel19, jLabel20, jLabel21, jLabel22, jLabel23});
+        jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel19, jLabel20, jLabel21, jLabel22});
+
+        jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {MaHD_tf, TongTien_tf});
 
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1052,29 +1044,26 @@ public class QLNhaSach extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22)
-                    .addComponent(EmailNV_tf1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(MaNV_tf1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TongTien_tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MaHD_tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(HoTenNV_tf1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel23)
-                    .addComponent(ChucVu_cbx1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NgayLap_tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(MaNVCTHD_tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(AddHD_btn)
-                        .addComponent(UpdateNV_btn1)
-                        .addComponent(DeleteNV_tf1))
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel21)
-                        .addComponent(DienThoaiNV_tf1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(SuaHD_btn)
+                        .addComponent(DeleteHD_btn)))
                 .addGap(86, 86, 86)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
                 .addGap(21, 21, 21))
         );
 
-        jPanel4Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel19, jLabel20, jLabel21, jLabel22, jLabel23});
+        jPanel4Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel19, jLabel20, jLabel21, jLabel22});
 
         jTabbedPane1.addTab("QL Hóa Đơn", jPanel4);
 
@@ -1155,16 +1144,16 @@ public class QLNhaSach extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel3MouseClicked
 
     private void AddHD_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddHD_btnActionPerformed
-        CTHoaDon_dialog.show(true);
+        new CTHoaDon(this, rootPaneCheckingEnabled).show();
     }//GEN-LAST:event_AddHD_btnActionPerformed
 
-    private void UpdateNV_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateNV_btn1ActionPerformed
+    private void SuaHD_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SuaHD_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UpdateNV_btn1ActionPerformed
+    }//GEN-LAST:event_SuaHD_btnActionPerformed
 
-    private void DeleteNV_tf1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteNV_tf1ActionPerformed
+    private void DeleteHD_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteHD_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DeleteNV_tf1ActionPerformed
+    }//GEN-LAST:event_DeleteHD_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1213,35 +1202,34 @@ public class QLNhaSach extends javax.swing.JFrame {
     private javax.swing.JTable CTHoaDon_table;
     private javax.swing.JComboBox<String> Category_cbx;
     private javax.swing.JComboBox<String> ChucVu_cbx;
-    private javax.swing.JComboBox<String> ChucVu_cbx1;
+    private javax.swing.JButton DeleteHD_btn;
     private javax.swing.JButton DeleteKH_tf;
     private javax.swing.JButton DeleteNV_tf;
-    private javax.swing.JButton DeleteNV_tf1;
     private javax.swing.JButton DeleteSach_btn;
     private javax.swing.JTextArea DiaChiKH_TArea;
     private javax.swing.JTextField DienThoaiKH_tf;
     private javax.swing.JTextField DienThoaiNV_tf;
-    private javax.swing.JTextField DienThoaiNV_tf1;
     private javax.swing.JTextField EmailNV_tf;
-    private javax.swing.JTextField EmailNV_tf1;
     private javax.swing.JTextField Email_tf;
     private javax.swing.JTextField HoTenKH_tf;
     private javax.swing.JTextField HoTenNV_tf;
-    private javax.swing.JTextField HoTenNV_tf1;
+    private javax.swing.JTextField MaHD_tf;
     private javax.swing.JTextField MaKH_tf;
+    private javax.swing.JTextField MaNVCTHD_tf;
     private javax.swing.JTextField MaNV_tf;
-    private javax.swing.JTextField MaNV_tf1;
+    private javax.swing.JTextField NgayLap_tf;
     private javax.swing.JTextField Price_tf;
     private javax.swing.JComboBox<String> Publisher_cbx;
     private javax.swing.JTextField StockQuantity_tf;
+    private javax.swing.JButton SuaHD_btn;
     private javax.swing.JTextField Title_tf;
+    private javax.swing.JTextField TongTien_tf;
     private javax.swing.JButton UpdateKH_btn;
     private javax.swing.JButton UpdateNV_btn;
-    private javax.swing.JButton UpdateNV_btn1;
     private javax.swing.JButton UpdateSach_btn;
+    private javax.swing.JTable data_table_hd;
     private javax.swing.JTable data_table_kh;
     private javax.swing.JTable data_table_nv;
-    private javax.swing.JTable data_table_nv1;
     private javax.swing.JTable data_table_sach;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1258,7 +1246,6 @@ public class QLNhaSach extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;

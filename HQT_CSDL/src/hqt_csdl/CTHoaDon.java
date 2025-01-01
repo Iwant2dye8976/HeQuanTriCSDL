@@ -19,6 +19,7 @@ public class CTHoaDon extends javax.swing.JDialog {
 
     private ConSQL conn = new ConSQL();
     private String[] columns_chitiet_hd = {"", "Sach", "SoLuong", "DonGia", "Tong"};
+    private int MaHoaDon;
 
     /**
      * Creates new form CTHoaDon
@@ -30,73 +31,79 @@ public class CTHoaDon extends javax.swing.JDialog {
     }
 
     public void LoadDataIntoTableCTHoaDon() {
-    try {
-        // Tạo mô hình bảng
-        DefaultTableModel model = new DefaultTableModel(columns_chitiet_hd, 0) {
-            @Override
-            public boolean isCellEditable(int row, int column) {
-                // Chỉ cho phép chỉnh sửa cột "Số lượng"
-                return column == 0 || column == 2;
-            }
-
-            @Override
-            public Class<?> getColumnClass(int columnIndex) {
-                // Cột 0 chứa checkbox
-                if (columnIndex == 0) {
-                    return Boolean.class;
+        try {
+            // Tạo mô hình bảng
+            DefaultTableModel model = new DefaultTableModel(columns_chitiet_hd, 0) {
+                @Override
+                public boolean isCellEditable(int row, int column) {
+                    // Chỉ cho phép chỉnh sửa cột "Số lượng"
+                    return column == 0 || column == 2;
                 }
-                return String.class;
-            }
-        };
 
-        // Lấy dữ liệu từ cơ sở dữ liệu
-        ResultSet rs = conn.GetSach();
-        while (rs.next()) {
-            Sach s = new Sach(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getDouble(6), rs.getInt(7));
-            Object[] row = {
-                false,            // Checkbox
-                s.getTieuDe(),    // Tiêu đề sách
-                0,                // Số lượng (ban đầu là 0)
-                s.getGia(),       // Đơn giá
-                0.0               // Thành tiền (ban đầu là 0)
+                @Override
+                public Class<?> getColumnClass(int columnIndex) {
+                    // Cột 0 chứa checkbox
+                    if (columnIndex == 0) {
+                        return Boolean.class;
+                    }
+                    return String.class;
+                }
             };
-            model.addRow(row);
-        }
 
-        // Lắng nghe sự thay đổi trong bảng
-        model.addTableModelListener(new TableModelListener() {
-            @Override
-            public void tableChanged(TableModelEvent e) {
-                // Xử lý sự kiện chỉ khi cột "Số lượng" (index = 2) thay đổi
-                if (e.getColumn() == 2) {
-                    int row = e.getFirstRow(); // Hàng được thay đổi
-                    if (row != -1) {
-                        try {
-                            // Lấy số lượng và đơn giá
-                            int SL = Integer.parseInt(model.getValueAt(row, 2).toString());
-                            double DG = Double.parseDouble(model.getValueAt(row, 3).toString());
-                            
-                            // Tính thành tiền
-                            double total = SL * DG;
-                            model.setValueAt(total, row, 4); // Cập nhật cột "Thành tiền"
-                        } catch (NumberFormatException ex) {
-                            JOptionPane.showMessageDialog(null, "Số lượng phải là số nguyên!", "Lỗi nhập liệu", JOptionPane.ERROR_MESSAGE);
-                            model.setValueAt(0, row, 4); // Nếu lỗi, đặt "Thành tiền" về 0
+            // Lấy dữ liệu từ cơ sở dữ liệu
+            ResultSet rs = conn.GetSach();
+            while (rs.next()) {
+                Sach s = new Sach(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getDouble(6), rs.getInt(7));
+                Object[] row = {
+                    false, // Checkbox
+                    s.getTieuDe(), // Tiêu đề sách
+                    0, // Số lượng (ban đầu là 0)
+                    s.getGia(), // Đơn giá
+                    0.0 // Thành tiền (ban đầu là 0)
+                };
+                model.addRow(row);
+            }
+
+            // Lắng nghe sự thay đổi trong bảng
+            model.addTableModelListener(new TableModelListener() {
+                @Override
+                public void tableChanged(TableModelEvent e) {
+                    // Xử lý sự kiện chỉ khi cột "Số lượng" (index = 2) thay đổi
+                    if (e.getColumn() == 2) {
+                        int row = e.getFirstRow(); // Hàng được thay đổi
+                        if (row != -1) {
+                            try {
+                                // Lấy số lượng và đơn giá
+                                int SL = Integer.parseInt(model.getValueAt(row, 2).toString());
+                                double DG = Double.parseDouble(model.getValueAt(row, 3).toString());
+
+                                // Tính thành tiền
+                                double total = SL * DG;
+                                model.setValueAt(total, row, 4); // Cập nhật cột "Thành tiền"
+                            } catch (NumberFormatException ex) {
+                                JOptionPane.showMessageDialog(null, "Số lượng phải là số nguyên!", "Lỗi nhập liệu", JOptionPane.ERROR_MESSAGE);
+                                model.setValueAt(0, row, 4); // Nếu lỗi, đặt "Thành tiền" về 0
+                            }
                         }
                     }
+                    int tong = 0;
+                    for (int i = 0; i < model.getRowCount(); i++) {
+                        if ((Boolean) model.getValueAt(i, 0)) {
+                            tong += Double.parseDouble(model.getValueAt(i, 4).toString());
+                        }
+                    }
+                    Tong_tf.setText(tong + "");
                 }
-            }
-        });
+            });
 
-        // Thiết lập mô hình cho bảng
-        CTHoaDon_table.setModel(model);
+            // Thiết lập mô hình cho bảng
+            CTHoaDon_table.setModel(model);
 
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-        JOptionPane.showMessageDialog(null, "Xảy ra lỗi khi kết nối CSDL", "Lỗi", JOptionPane.ERROR_MESSAGE);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Xảy ra lỗi khi kết nối CSDL", "Lỗi", JOptionPane.ERROR_MESSAGE);
+        }
     }
-}
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -113,6 +120,8 @@ public class CTHoaDon extends javax.swing.JDialog {
         CTHoaDon_table = new javax.swing.JTable();
         HoanTat_btn = new javax.swing.JButton();
         Dong_btn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        Tong_tf = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -139,11 +148,6 @@ public class CTHoaDon extends javax.swing.JDialog {
         CTHoaDon_table.setColumnSelectionAllowed(true);
         CTHoaDon_table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         CTHoaDon_table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        CTHoaDon_table.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                CTHoaDon_tablePropertyChange(evt);
-            }
-        });
         jScrollPane6.setViewportView(CTHoaDon_table);
 
         HoanTat_btn.setText("Hoàn Tất");
@@ -160,6 +164,11 @@ public class CTHoaDon extends javax.swing.JDialog {
             }
         });
 
+        jLabel1.setText("Tong:");
+
+        Tong_tf.setEditable(false);
+        Tong_tf.setForeground(new java.awt.Color(255, 51, 51));
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -167,14 +176,17 @@ public class CTHoaDon extends javax.swing.JDialog {
             .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(HoanTat_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Dong_btn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Tong_tf, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(171, 171, 171)
-                .addComponent(HoanTat_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(174, 174, 174)
-                .addComponent(Dong_btn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel5Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Dong_btn, HoanTat_btn});
@@ -188,11 +200,13 @@ public class CTHoaDon extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(HoanTat_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Dong_btn))
+                    .addComponent(Dong_btn)
+                    .addComponent(jLabel1)
+                    .addComponent(Tong_tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {Dong_btn, HoanTat_btn});
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {Dong_btn, HoanTat_btn, Tong_tf, jLabel1});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -212,16 +226,12 @@ public class CTHoaDon extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CTHoaDon_tablePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_CTHoaDon_tablePropertyChange
-
-    }//GEN-LAST:event_CTHoaDon_tablePropertyChange
-
     private void HoanTat_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HoanTat_btnActionPerformed
-        
+        System.out.println();
     }//GEN-LAST:event_HoanTat_btnActionPerformed
 
     private void Dong_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dong_btnActionPerformed
-        System.exit(0);
+        dispose();
     }//GEN-LAST:event_Dong_btnActionPerformed
 
     /**
@@ -270,6 +280,8 @@ public class CTHoaDon extends javax.swing.JDialog {
     private javax.swing.JTable CTHoaDon_table;
     private javax.swing.JButton Dong_btn;
     private javax.swing.JButton HoanTat_btn;
+    private javax.swing.JTextField Tong_tf;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane6;
