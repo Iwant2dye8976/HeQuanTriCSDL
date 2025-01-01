@@ -12,7 +12,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
+public class Sach {
 
     private int MaSach;
     private String TieuDe;
@@ -22,7 +22,7 @@ public class Book {
     private double Gia;
     private int SoLuongTon;
 
-    public Book(int MaSach, String TieuDe, String TacGia, String TheLoai, String NhaXuatBan, double Gia, int SoLuongTon) {
+    public Sach(int MaSach, String TieuDe, String TacGia, String TheLoai, String NhaXuatBan, double Gia, int SoLuongTon) {
         this.MaSach = MaSach;
         this.TieuDe = TieuDe;
         this.TacGia = TacGia;
@@ -64,8 +64,8 @@ public class Book {
         this.TheLoai = TheLoai;
     }
 
-    public String getPublisher() {
-        return publisher;
+    public String getNhaXuatBan() {
+        return NhaXuatBan;
     }
 
     public void setNhaXuatBan(String NhaXuatBan) {
