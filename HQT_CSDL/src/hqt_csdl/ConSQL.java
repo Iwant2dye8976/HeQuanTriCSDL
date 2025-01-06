@@ -280,7 +280,7 @@ public class ConSQL implements INhaSach {
         }
         return rs;
     }
-    
+
     public ResultSet GetCTHoaDon() {
         getCon();
         rs = null;
@@ -335,5 +335,77 @@ public class ConSQL implements INhaSach {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public ResultSet GetPhieuNhap() {
+        getCon();
+        rs = null;
+        String querry = "Select * from PhieuNhap";
+        try {
+            PreparedStatement ps = cn.prepareStatement(querry);
+            rs = ps.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rs;
+    }
+
+    public void AddPhieuNhap(int MaPhieuNhap, int MaNhaCungCap, int MaNhanVien, Date NgayLap, double TongTien) {
+        String sql = "Insert into PhieuNhap(MaNhaCungCap, MaNhanVien, NgayLap, TongTien) Values(?,?,?,?)";
+        getCon();
+        try {
+            PreparedStatement ps = cn.prepareStatement(sql);
+            ps.setInt(1, MaNhaCungCap);
+            ps.setInt(2, MaNhanVien);
+            ps.setDate(3, NgayLap);
+            ps.setDouble(4, TongTien);
+            ps.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void UpdatePhieuNhap(int MaPhieuNhap, int MaNhaCungCap, int MaNhanVien, Date NgayLap, double TongTien) {
+        String sql = "Update PhieuNhap set MaNhaCungCap=?, MaNhanVien=?, NgayLap=?, TongTien=? Where MaPhieuNhap=?";
+        getCon();
+        try {
+            PreparedStatement ps = cn.prepareStatement(sql);
+            ps.setInt(1, MaNhaCungCap);
+            ps.setInt(2, MaNhanVien);
+            ps.setDate(3, NgayLap);
+            ps.setDouble(4, TongTien);
+            ps.setInt(5, MaPhieuNhap);
+            ps.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void DeletePhieuNhap(int MaPhieuNhap) {
+        String sql = "Delete PhiueNhap Where MaPhieuNhap=?";
+        getCon();
+        try {
+            PreparedStatement ps = cn.prepareStatement(sql);
+            ps.setInt(1, MaPhieuNhap);
+            ps.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public ResultSet getSachtuChiTietPN(int MaPhieuNhap) {
+        String sql = "SELECT SACH.MaSach, TieuDe, SUM(SoLuong), GiaNhap FROM SACH, ChiTietPhieuNhap " +
+                    "WHERE SACH.MaSach = ChiTietPhieuNhap.MaSach AND MaPhieuNhap=? GROUP BY SACH.MaSach, TieuDe, GiaNhap";
+        rs = null;
+        getCon();
+        try {
+            PreparedStatement ps = cn.prepareStatement(sql);
+            ps.setInt(1, MaPhieuNhap);
+            rs = ps.executeQuery();
+            System.out.println("aa");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rs;
     }
 }
