@@ -176,7 +176,7 @@
                                       <Component id="BookID_tf" linkSize="9" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="33" max="32767" attributes="0"/>
+                              <EmptySpace pref="31" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" attributes="0">
@@ -249,7 +249,7 @@
                           <Component id="DeleteSach_btn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="447" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="499" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -452,7 +452,7 @@
                                           <Component id="jLabel11" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel13" alignment="0" pref="61" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="9" max="32767" attributes="0"/>
+                                      <EmptySpace pref="7" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Email_tf" linkSize="14" min="-2" max="-2" attributes="0"/>
@@ -484,9 +484,9 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel9" linkSize="10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="HoTenKH_tf" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel9" linkSize="10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="HoTenKH_tf" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -505,7 +505,7 @@
                           <Component id="DeleteKH_tf" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" pref="466" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" pref="518" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -718,7 +718,7 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                      <Component id="jScrollPane4" pref="425" max="32767" attributes="0"/>
+                      <Component id="jScrollPane4" pref="477" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -836,6 +836,9 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel4">
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanel4MouseClicked"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="QL H&#xf3;a &#x110;&#x1a1;n">
@@ -847,43 +850,73 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel26" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane5" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel19" linkSize="20" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
-                                  <Component id="jLabel20" linkSize="20" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel21" linkSize="20" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="MaNVCTHD_tf" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <Component id="NgayLap_tf" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <Component id="MaHD_tf" linkSize="22" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                              <Component id="jLabel28" min="-2" pref="101" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel19" linkSize="20" alignment="0" min="-2" pref="101" max="-2" attributes="0"/>
+                                              <Component id="jLabel21" linkSize="20" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="MaNVHD_tf" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                                              <Component id="MaHD_tf" linkSize="22" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel23" linkSize="20" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="MKH_HD_tf" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jScrollPane5" min="-2" pref="369" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                      <Component id="jLabel22" linkSize="20" min="-2" pref="61" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="TongTien_tf" linkSize="22" min="-2" pref="180" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jLabel20" linkSize="20" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                  <Component id="NgayLap_tf" min="-2" pref="220" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jLabel22" linkSize="20" min="-2" pref="61" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="TongTien_tf" linkSize="22" pref="180" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="AddHD_btn" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="SuaHD_btn" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="DeleteHD_btn" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                                      <Component id="AddHD_btn" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="SuaHD_btn" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="DeleteHD_btn" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel29" min="-2" pref="119" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane7" min="-2" pref="350" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                      <EmptySpace pref="57" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jLabel26" alignment="1" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -901,20 +934,28 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel20" linkSize="21" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="NgayLap_tf" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel23" linkSize="21" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="MKH_HD_tf" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel21" linkSize="21" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="MaNVCTHD_tf" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="3" groupAlignment="3" attributes="0">
-                              <Component id="AddHD_btn" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="SuaHD_btn" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="DeleteHD_btn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="MaNVHD_tf" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AddHD_btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SuaHD_btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DeleteHD_btn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                      <Component id="jScrollPane5" pref="425" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel28" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="jLabel29" alignment="3" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPane5" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane7" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="116" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -946,7 +987,7 @@
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="MaNVCTHD_tf">
+            <Component class="javax.swing.JTextField" name="MaNVHD_tf">
             </Component>
             <Component class="javax.swing.JButton" name="AddHD_btn">
               <Properties>
@@ -989,6 +1030,10 @@
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0"/>
                     </Property>
+                    <Property name="selectionMode" type="int" value="0"/>
+                    <Property name="selectionModel" type="javax.swing.ListSelectionModel" editor="org.netbeans.modules.form.editors2.JTableSelectionModelEditor">
+                      <JTableSelectionModel selectionMode="0"/>
+                    </Property>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
@@ -1011,6 +1056,54 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="TongTien_tf">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane7">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="cthd_table">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="0" rowCount="4"/>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="1"/>
+                    </Property>
+                    <Property name="columnSelectionAllowed" type="boolean" value="true"/>
+                    <Property name="selectionMode" type="int" value="0"/>
+                    <Property name="selectionModel" type="javax.swing.ListSelectionModel" editor="org.netbeans.modules.form.editors2.JTableSelectionModelEditor">
+                      <JTableSelectionModel selectionMode="0"/>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jLabel23">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="M&#xe3; kh&#xe1;ch h&#xe0;ng"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="MKH_HD_tf">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel28">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="H&#xd3;A &#x110;&#x1a0;N"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel29">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CHI TI&#x1ebe;T H&#xd3;A &#x110;&#x1a0;N"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
